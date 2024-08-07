@@ -24,9 +24,9 @@ router.get('/', async (req, res) => {
 })
 
 // Get a single track
-router.get('/tracks/:id', async (req, res) => {
+router.get('/:trackId', async (req, res) => {
     try {
-      const track = await Track.findById(req.params.id);
+      const track = await Track.findById(req.params.trackId);
       if (!track) {
         res.status(404).json({ message: 'Track not found' });
       } else {
